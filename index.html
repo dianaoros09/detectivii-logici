@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detectivii Logicii</title>
+
+    <style>
+        /* =========================
+           CULORI ȘI FONTURI
+           ========================= */
+
+        :root {
+            --roz: #E85D9E;
+            --aqua: #159A9C;
+            --text: #243447;
+            --fundal: #FFF8FC;
+            --alb: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--fundal);
+            color: var(--text);
+        }
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            height: 80px;
+            background-color: var(--alb);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-family: "Trebuchet MS", sans-serif;
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--roz);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .small-button {
+            border: none;
+            background-color: #f3f3f3;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           CONȚINUT PRINCIPAL
+           ========================= */
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 45px 25px;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            font-family: "Trebuchet MS", sans-serif;
+            font-size: 38px;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .welcome p {
+            font-size: 18px;
+        }
+
+        /* =========================
+           CARDURI
+           ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .card {
+            background-color: var(--alb);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            font-family: "Trebuchet MS", sans-serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           PROGRES
+           ========================= */
+
+        .level {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 18px;
+            background-color: #E6E6E6;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .progress {
+            width: 75%;
+            height: 100%;
+            background-color: var(--aqua);
+            border-radius: 20px;
+        }
+
+        .xp {
+            font-size: 17px;
+            font-weight: bold;
+            color: var(--aqua);
+        }
+
+        /* =========================
+           PROVOCAREA ZILEI
+           ========================= */
+
+        .challenge {
+            border: 3px solid var(--roz);
+        }
+
+        .challenge-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .challenge h2 {
+            color: var(--roz);
+        }
+
+        .challenge p {
+            font-size: 17px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .start-button {
+            border: none;
+            background-color: var(--roz);
+            color: white;
+            font-family: "Trebuchet MS", sans-serif;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 13px 25px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .start-button:hover {
+            opacity: 0.85;
+        }
+
+        /* =========================
+           NAVIGARE
+           ========================= */
+
+        .navigation-title {
+            font-family: "Trebuchet MS", sans-serif;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .navigation {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .nav-button {
+            background-color: var(--alb);
+            border: 2px solid #eeeeee;
+            border-radius: 16px;
+            padding: 20px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-button:hover {
+            border-color: var(--aqua);
+            transform: translateY(-3px);
+        }
+
+        .nav-icon {
+            display: block;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .nav-text {
+            font-family: "Trebuchet MS", sans-serif;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        /* =========================
+           RESPONSIVE
+           ========================= */
+
+        @media (max-width: 750px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            main {
+                padding: 30px 15px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .welcome h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            🧠 Detectivii Logicii
+        </div>
+
+        <div class="header-buttons">
+            <button class="small-button">👤</button>
+            <button class="small-button">⚙️</button>
+        </div>
+
+    </header>
+
+
+    <!-- CONȚINUT -->
+    <main>
+
+        <!-- MESAJ DE BUN VENIT -->
+        <section class="welcome">
+
+            <h1>👋 Bun venit!</h1>
+
+            <p>
+                Ești pregătit pentru o nouă provocare de logică?
+            </p>
+
+        </section>
+
+
+        <!-- PROGRES + PROVOCAREA ZILEI -->
+        <section class="cards">
+
+            <!-- PROGRES -->
+            <div class="card">
+
+                <h2>🏆 Progresul tău</h2>
+<p id="scor">⭐ Scor: 0</p>
+                <div class="level">
+                    <span>Nivelul 3</span>
+                    <span>75%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+
+                <p class="xp">
+                    ⭐ 350 XP
+                </p>
+
+            </div>
+
+
+            <!-- PROVOCAREA ZILEI -->
+            <div class="card challenge">
+
+                <div class="challenge-icon">
+                    🕵️
+                </div>
+
+                <h2>Provocarea zilei</h2>
+
+                <p>
+                    Găsește regula și rezolvă misterul logic!
+                    Demonstrează că ești un adevărat detectiv.
+                </p>
+
+                <button id="start" class="start-button">
+    Începe →
+</button>
+<div id="continut">
+    <p id="intrebare"></p>
+    <div id="raspunsuri"></div>
+    <p id="mesaj"></p>
+</div>
+            </div>
+
+        </section>
+
+
+        <!-- NAVIGARE -->
+        <h2 class="navigation-title">
+            Alege o activitate
+        </h2>
+
+        <section class="navigation">
+
+            <div class="nav-button">
+                <span class="nav-icon">🗺️</span>
+                <span class="nav-text">Aventură</span>
+            </div>
+
+            <div class="nav-button">
+                <span class="nav-icon">🧠</span>
+                <span class="nav-text">Antrenament</span>
+            </div>
+
+            <div class="nav-button">
+                <span class="nav-icon">🎮</span>
+                <span class="nav-text">Jocuri</span>
+            </div>
+
+            <div class="nav-button">
+                <span class="nav-icon">🏆</span>
+                <span class="nav-text">Progres</span>
+            </div>
+
+        </section>
+
+    </main>
+<script src="script.js"></script>
+</body>
+</html>
