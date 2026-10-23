@@ -1,4 +1,4 @@
-# detectivii-logici
+# Detectivii-logici
 Aplicație educațională cu întrebări de logică pentru exersarea gândirii logice.
 # Detectivii Logicii
 
