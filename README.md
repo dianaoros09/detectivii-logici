@@ -1,5 +1,3 @@
-# Detectivii-logici
-Aplicație educațională cu întrebări de logică pentru exersarea gândirii logice.
 # Detectivii Logicii
 
 **Detectivii Logicii** este o aplicație educațională creată pentru exersarea gândirii logice prin întrebări interactive.
