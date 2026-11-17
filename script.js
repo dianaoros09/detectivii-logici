@@ -2,6 +2,10 @@
 let scor = 0;
 let indexIntrebare = 0;
 let raspunsDat = false;
+let raspunsuriCorecte = 0;
+
+const baraProgres = document.getElementById("progres");
+const textProgres = document.getElementById("procent");
 
 const butonStart = document.getElementById("start");
 const zonaScor = document.getElementById("scor");
@@ -67,7 +71,12 @@ function afiseazaIntrebare() {
         zonaRaspunsuri.appendChild(buton);
     });
 }
+function actualizeazaProgres() {
+    const procent = (raspunsuriCorecte / intrebari.length) * 100;
 
+    baraProgres.style.width = procent + "%";
+    textProgres.textContent = procent + "%";
+}
 function verifica(alegere) {
     if (raspunsDat) {
         return;
@@ -78,9 +87,11 @@ function verifica(alegere) {
     const intrebareCurenta = intrebari[indexIntrebare];
 
     if (alegere === intrebareCurenta.corect) {
-        scor += 10;
-        zonaMesaj.textContent = "Corect! Ai câștigat 10 puncte! ⭐";
-    } else {
+    scor += 10;
+    raspunsuriCorecte++;
+    zonaMesaj.textContent = "Corect! Ai câștigat 10 puncte! ⭐";
+    actualizeazaProgres();
+} else {
         zonaMesaj.textContent =
             "Nu chiar! Răspunsul corect era: " +
             intrebareCurenta.variante[intrebareCurenta.corect];
