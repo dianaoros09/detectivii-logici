@@ -43,6 +43,7 @@ const intrebari = [
 
 butonStart.addEventListener("click", function () {
     butonStart.style.display = "none";
+    actualizeazaProgres();
     afiseazaIntrebare();
 });
 
