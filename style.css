@@ -271,3 +271,122 @@
     font-weight: bold;
     color: #243447;
 }
+
+/* ===== HARTA AVENTURII ===== */
+
+#adventure-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#aventura-section {
+    padding: 20px 10px;
+}
+
+.adventure-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.adventure-header h2 {
+    color: #E85D9E;
+    font-size: 28px;
+}
+
+.adventure-header p {
+    color: #243447;
+    font-size: 16px;
+}
+
+.adventure-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 10px;
+    border-radius: 25px;
+    background: linear-gradient(
+        180deg,
+        #E5F7FF,
+        #F4E9FF,
+        #E4F8EA,
+        #FFF3D6
+    );
+}
+
+.adventure-node {
+    width: 85%;
+    max-width: 320px;
+    padding: 18px;
+    text-align: center;
+    border-radius: 22px;
+    background: #FFFFFF;
+    box-shadow: 0 5px 12px rgba(80, 90, 120, 0.12);
+    border: 3px solid #E8DDF8;
+    transition: transform 0.2s;
+}
+
+.adventure-node.unlocked {
+    border-color: #A8DFC5;
+    cursor: pointer;
+}
+
+.adventure-node.locked {
+    opacity: 0.65;
+    background: #F5F1FA;
+}
+
+.adventure-node.unlocked:hover {
+    transform: scale(1.04);
+}
+
+.node-icon {
+    display: block;
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.adventure-node h3 {
+    color: #243447;
+    margin: 5px 0;
+}
+
+.adventure-node p {
+    color: #77728C;
+    margin: 5px 0;
+}
+
+.node-status {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    border-radius: 15px;
+    background: #E5F7EE;
+    color: #347B5B;
+    font-size: 13px;
+}
+
+.locked .node-status {
+    background: #EEE8F5;
+    color: #81758F;
+}
+
+.adventure-path {
+    font-size: 28px;
+    padding: 2px;
+}
+
+#adventure-map .adventure-node {
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .adventure-node {
+        width: 95%;
+    }
+
+    .adventure-header h2 {
+        font-size: 23px;
+    }
+}
