@@ -4,8 +4,13 @@ let indexIntrebare = 0;
 let raspunsDat = false;
 let raspunsuriCorecte = 0;
 
-const baraProgres = document.getElementById("progres");
-const textProgres = document.getElementById("procent");
+// Bara de progres din stânga
+const baraProgres = document.getElementById("progres-total");
+const textProgres = document.getElementById("procent-total");
+
+// Bara de progres din provocarea zilei
+const baraProgresQuiz = document.getElementById("progres");
+const textProgresQuiz = document.getElementById("procent");
 
 const butonStart = document.getElementById("start");
 const zonaScor = document.getElementById("scor");
@@ -75,8 +80,13 @@ function afiseazaIntrebare() {
 function actualizeazaProgres() {
     const procent = (raspunsuriCorecte / intrebari.length) * 100;
 
+    // Actualizăm progresul din stânga
     baraProgres.style.width = procent + "%";
     textProgres.textContent = procent + "%";
+
+    // Actualizăm progresul din quiz
+    baraProgresQuiz.style.width = procent + "%";
+    textProgresQuiz.textContent = procent + "%";
 }
 function verifica(alegere) {
     if (raspunsDat) {
