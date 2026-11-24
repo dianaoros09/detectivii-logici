@@ -150,3 +150,29 @@ function afiseazaRezultatFinal() {
         "Scorul tău final este " + scor + " din " +
         (intrebari.length * 10) + " puncte. Bravo, detectivule!";
 }
+
+// ===== NAVIGARE AVENTURĂ =====
+
+const butonAventura = document.getElementById("buton-aventura");
+const aventuraSection = document.getElementById("aventura-section");
+const butonInapoi = document.getElementById("inapoi-acasa");
+
+if (butonAventura && aventuraSection && butonInapoi) {
+    butonAventura.addEventListener("click", function () {
+        document.querySelectorAll("main > section").forEach(function (sectiune) {
+            sectiune.hidden = true;
+        });
+
+        aventuraSection.hidden = false;
+    });
+
+    butonInapoi.addEventListener("click", function () {
+        aventuraSection.hidden = true;
+
+        document.querySelectorAll("main > section").forEach(function (sectiune) {
+            if (sectiune.id !== "aventura-section") {
+                sectiune.hidden = false;
+            }
+        });
+    });
+}
