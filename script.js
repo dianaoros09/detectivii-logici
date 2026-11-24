@@ -176,3 +176,24 @@ if (butonAventura && aventuraSection && butonInapoi) {
         });
     });
 }
+
+// ===== NIVELURI AVENTURĂ =====
+
+const niveluriAventura = document.querySelectorAll(".adventure-node");
+
+niveluriAventura.forEach(function(nivel) {
+    nivel.addEventListener("click", function() {
+
+        if (nivel.classList.contains("locked")) {
+            alert("🔒 Acest nivel este încă blocat! Termină mai întâi misiunea anterioară.");
+            return;
+        }
+
+        const numarNivel = nivel.dataset.level;
+
+        if (numarNivel === "1") {
+            alert("🏡 Bine ai venit în Satul misterios! Pregătește-te pentru prima misiune!");
+        }
+
+    });
+});
