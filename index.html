@@ -103,10 +103,10 @@
 
         <section class="navigation">
 
-            <div class="nav-button">
-                <span class="nav-icon">🗺️</span>
-                <span class="nav-text">Aventură</span>
-            </div>
+            <div class="nav-button" id="buton-aventura">
+    <span class="nav-icon">🗺️</span>
+    <span class="nav-text">Aventură</span>
+</div>
 
             <div class="nav-button">
                 <span class="nav-icon">🧠</span>
@@ -121,6 +121,66 @@
             <div class="nav-button">
                 <span class="nav-icon">🏆</span>
                 <span class="nav-text">Progres</span>
+            </div>
+
+        </section>
+
+        <!-- AVENTURĂ -->
+        <section id="aventura-section" hidden>
+
+            <div class="adventure-header">
+                <h2>🌸 Lumea detectivilor</h2>
+                <p>O lume plină de mistere, flori și aventuri!</p>
+                <button id="inapoi-acasa" class="start-button">
+                    ← Înapoi
+                </button>
+            </div>
+
+            <div class="adventure-map">
+
+                <div class="adventure-node unlocked" data-level="1">
+                    <span class="node-icon">🏡</span>
+                    <h3>Satul misterios</h3>
+                    <p>Misiunea 1</p>
+                    <span class="node-status">🔓 Disponibil</span>
+                </div>
+
+                <div class="adventure-path">🌷</div>
+
+                <div class="adventure-node locked" data-level="2">
+                    <span class="node-icon">🌳</span>
+                    <h3>Pădurea secretelor</h3>
+                    <p>Misiunea 2</p>
+                    <span class="node-status">🔒 Blocat</span>
+                </div>
+
+                <div class="adventure-path">🌼</div>
+
+                <div class="adventure-node locked" data-level="3">
+                    <span class="node-icon">🏰</span>
+                    <h3>Castelul enigmelor</h3>
+                    <p>Misiunea 3</p>
+                    <span class="node-status">🔒 Blocat</span>
+                </div>
+
+                <div class="adventure-path">🦋</div>
+
+                <div class="adventure-node locked" data-level="4">
+                    <span class="node-icon">🚂</span>
+                    <h3>Trenul misterios</h3>
+                    <p>Misiunea 4</p>
+                    <span class="node-status">🔒 Blocat</span>
+                </div>
+
+                <div class="adventure-path">🌸</div>
+
+                <div class="adventure-node locked" data-level="5">
+                    <span class="node-icon">💎</span>
+                    <h3>Comoara pierdută</h3>
+                    <p>Misiunea 5</p>
+                    <span class="node-status">🔒 Blocat</span>
+                </div>
+
             </div>
 
         </section>
